@@ -1,2 +1,2 @@
 yc compute instance delete --name test-alt-server-9-1
-yc compute instance create test-alt-server-9-1 --zone ru-central1-a --memory 3G --cores 2 --core-fraction 20  --platform standard-v3 --preemptible=true --public-ip=true --ssh-key ~/.ssh/id_rsa.pub --create-boot-disk image-family=alt-server-9
+yc compute instance create test-alt-server-9-1 --zone ru-central1-a --memory 3G --cores 2 --core-fraction 20  --platform standard-v3 --preemptible=true --public-ip=true --ssh-key ~/.ssh/id_rsa.pub --create-boot-disk image-name=alt-server-9-1-alt4-x86-64
