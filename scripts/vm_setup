@@ -51,6 +51,15 @@ main() {
 		fi
 	fi
 
+	if test "${VM_TYPE}" == "yandex"; then
+		if test "${CLOUDINIT}" == "1"; then
+			sudo_step "${STEP_DIR}/setup_cloudinit"
+		fi
+		sudo_step "${STEP_DIR}/setup_agent"
+		sudo_step "${STEP_DIR}/setup_network"
+		sudo_step "${STEP_DIR}/setup_grub2"
+	fi
+
 	sudo_step "${STEP_DIR}/setup_vagrant"
 
 	if test "${VM_TYPE}" == "qemu"; then

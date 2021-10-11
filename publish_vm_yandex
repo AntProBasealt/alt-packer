@@ -1,0 +1,7 @@
+
+
+aws --endpoint-url=https://storage.yandexcloud.net s3 cp qemu-alt-server-9.1-x86_64/qemu-alt-server-9.1-x86_64 s3://alt-distr/qemu-alt-server-9.1-alt4-x86_64
+
+yc compute image create --name "alt-server-9-1-alt4-x86-64" --source-uri "https://storage.yandexcloud.net/alt-distr/qemu-alt-server-9.1-alt4-x86_64" --family alt-server-9
+
+
