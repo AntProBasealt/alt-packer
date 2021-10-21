@@ -63,9 +63,8 @@
 ; created for Vagrant users. In case you use Vagrant to manage VMs -
 ; disable the 'test' user. Otherwise disable 'vagrant' user to secure
 ; your VM.
-("/users/create_account" new_name "test" gecos "" allow_su #t auto #f passwd_1 "123" passwd_2 "123")
 ("/users/create_account" new_name "vagrant" gecos "" allow_su #t auto #f passwd_1 "vagrant" passwd_2 "vagrant")
 
 ; There is no sshd available in Workstation by default so we enable it
 ("/postinstall/laststate" run "apt-get -y remove virtualbox-guest-common-vboxguest virtualbox-guest-common-vboxvideo virtualbox-common; rm -f /etc/modules-load.d/virtualbox-addition.conf")
-("/postinstall/firsttime" run "systemctl enable sshd; systemctl start sshd")
+("/postinstall/firsttime" run "systemctl enable sshd; systemctl restart sshd; rm -f /etc/machine-id; rm -f /var/lib/dbus/machine-id")
