@@ -1,1 +1,2 @@
-make image target=alt-server headless=false BASE_VERSION=9.2 TARGET_VERSION=9.2 VM_TYPE=yandex PACKER_CACHE=/home/lian/alt-packer/packer_cache/
+make image target=alt-server headless=false BASE_VERSION=9.2 TARGET_VERSION=9.2 VM_TYPE=yandex
+

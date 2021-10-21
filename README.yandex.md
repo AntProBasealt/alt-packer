@@ -33,7 +33,7 @@ sudo ./aws/install
 
 Getting and setting up login details
 * Login to Yandex Cloud Console and accept license agreement
-* Get Yandex OAuth token here [https://oauth.yandex.ru/authorize?response_type=token&client_id=1a6990aa636648e9b2ef855fa7bec2fb "here"]
+* Get Yandex OAuth token here [https://oauth.yandex.ru/authorize?response_type=token&client_id=%token% "here"]
 * `yc init`
 
 Setting up AWS CLI
