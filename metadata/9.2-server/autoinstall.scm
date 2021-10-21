@@ -63,5 +63,5 @@
 
 ; There is no sshd available in Workstation by default so we enable it
 ("/postinstall/laststate" run "cd $(dirname $AUTOINSTALL); cp-metadata autoinstall.sh; bash ./autoinstall.sh; cd -")
-("/postinstall/firsttime" run "systemctl enable sshd; systemctl start sshd; rm -f /etc/systemd/system/network.service.d/*.conf")
+("/postinstall/firsttime" run "systemctl enable network@eth0; systemctl start network@eth0; systemctl enable sshd; systemctl start sshd; rm -f /etc/systemd/system/network.service.d/*.conf")
 
