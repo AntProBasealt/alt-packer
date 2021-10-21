@@ -1,5 +1,5 @@
 {
-    "iso_url": "http://http://ftp.altlinux.org/pub/beta/workstation/x86_64/alt-workstation-9.911_beta1-x86_64.iso",
+    "iso_url": "http://ftp.altlinux.org/pub/beta/workstation/x86_64/alt-workstation-9.911_beta1-x86_64.iso",
     "iso_target_path": "alt-workstation-9.911-x86_64.iso",
     "iso_checksum": "bd900919445339fdad576fd152940493",
     "iso_checksum_type": "md5",
