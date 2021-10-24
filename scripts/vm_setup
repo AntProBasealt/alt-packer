@@ -64,6 +64,7 @@ main() {
 
 	if test "${VM_TYPE}" == "qemu"; then
 		sudo_step "${STEP_DIR}/setup_agent"
+		sudo_step "${STEP_DIR}/setup_test_user"
 	fi
 
 	sudo_step "${STEP_DIR}/setup_udev"
@@ -74,9 +75,12 @@ main() {
 
 	if test "${VM_TYPE}" == "vbox"; then
 		sudo_step "/tmp/install-guest-tools.sh"
+		sudo_step "${STEP_DIR}/setup_test_user"
 	fi
 
+	sudo_step "${STEP_DIR}/setup_restore_sshd_config"
 	sudo_step "${STEP_DIR}/setup_ssh"
+	sudo_step "${STEP_DIR}/setup_prepare_new_instance"
 	sudo_step "${STEP_DIR}/setup_ansible"
 }
 

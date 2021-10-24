@@ -1,0 +1,12 @@
+#! /bin/sh
+set -euo pipefail
+
+echo "Configuring Test user"
+useradd -m test
+usermod -aG wheel test
+echo "test:123" | chpasswd
+mkdir -p /home/test/.ssh
+#curl "http://${PACKER_HTTP_ADDR}/pubkeys/vagrant.pub" -o "/home/vagrant/.ssh/authorized_keys"
+chown -Rv test:test /home/vagrant
+echo "Test user configured"
+

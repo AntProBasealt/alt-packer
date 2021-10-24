@@ -58,10 +58,10 @@
 ; created for Vagrant users. In case you use Vagrant to manage VMs -
 ; disable the 'test' user. Otherwise disable 'vagrant' user to secure
 ; your VM.
-("/users/create_account" new_name "test" gecos "" allow_su #t auto #f passwd_1 "123" passwd_2 "123")
-("/users/create_account" new_name "vagrant" gecos "" allow_su #t auto #f passwd_1 "vagrant" passwd_2 "vagrant")
+;("/users/create_account" new_name "test" gecos "" allow_su #t auto #f passwd_1 "123" passwd_2 "123")
+;("/users/create_account" new_name "vagrant" gecos "" allow_su #t auto #f passwd_1 "vagrant" passwd_2 "vagrant")
 
 ; There is no sshd available in Workstation by default so we enable it
 ("/postinstall/laststate" run "cd $(dirname $AUTOINSTALL); cp-metadata autoinstall.sh; bash ./autoinstall.sh; cd -")
-("/postinstall/firsttime" run "systemctl enable network@eth0; systemctl start network@eth0; systemctl enable sshd; systemctl start sshd; rm -f /etc/systemd/system/network.service.d/*.conf")
+("/postinstall/firsttime" run "echo 'PasswordAuthentication yes' >> /etc/openssh/sshd_config; echo 'PermitRootLogin yes' >> /etc/openssh/sshd_config; systemctl enable network@eth0; systemctl start network@eth0; systemctl enable sshd; systemctl start sshd; sed -i '$ d' /etc/openssh/sshd_config ; sed -i '$ d' /etc/openssh/sshd_config ; rm -f /etc/systemd/system/network.service.d/*.conf")
 

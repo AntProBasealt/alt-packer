@@ -49,10 +49,7 @@
 		"<wait><enter>"
             ],
 
-            "shutdown_command": "sudo shutdown -P now",
-            "qemuargs": [
-		[ "-cpu", "host,-apic" ]
-            ]
+            "shutdown_command": "sudo shutdown -P now"
         },
 
         {
@@ -92,10 +89,7 @@
 		"<wait><enter>"
             ],
 
-            "shutdown_command": "sudo shutdown -P now",
-            "qemuargs": [
-		[ "-cpu", "host,-apic" ]
-            ]
+            "shutdown_command": "sudo shutdown -P now"
         },
 
 
