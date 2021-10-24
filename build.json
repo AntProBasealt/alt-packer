@@ -201,6 +201,7 @@
                 "TARGET_REPOS={{ user `target_version` }}",
                 "ARCH={{ user `arch` }}",
                 "CLOUDINIT={{ user `with_cloudinit` }}",
+                "VAGRANT={{ user `with_vagrant` }}",
                 "SISYPHUS={{ user `with_sisyphus` }}"
             ]
         }
