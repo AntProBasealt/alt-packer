@@ -2,6 +2,8 @@
 set -euo pipefail
 
 echo "Setting up new instance service"
+apt-get update
+apt-get -y install dmidecode
 curl "http://${PACKER_HTTP_ADDR}/scripts/altlinux-newinstance" -o "/usr/sbin/altlinux-newinstance"
 curl "http://${PACKER_HTTP_ADDR}/scripts/altlinux-newinstance.service" -o "/lib/systemd/system/altlinux-newinstance.service"
 chown root:root /usr/sbin/altlinux-newinstance

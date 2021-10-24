@@ -63,5 +63,5 @@
 
 ; There is no sshd available in Workstation by default so we enable it
 ("/postinstall/laststate" run "cd $(dirname $AUTOINSTALL); cp-metadata autoinstall.sh; bash ./autoinstall.sh; cd -")
-("/postinstall/firsttime" run "echo 'PasswordAuthentication yes' >> /etc/openssh/sshd_config; echo 'PermitRootLogin yes' >> /etc/openssh/sshd_config; systemctl enable network@eth0; systemctl start network@eth0; systemctl enable sshd; systemctl start sshd; sed -i '$ d' /etc/openssh/sshd_config ; sed -i '$ d' /etc/openssh/sshd_config ; rm -f /etc/systemd/system/network.service.d/*.conf")
+("/postinstall/firsttime" run "echo 'PasswordAuthentication yes' >> /etc/openssh/sshd_config; echo 'PermitRootLogin yes' >> /etc/openssh/sshd_config; systemctl enable sshd; systemctl start sshd; rm -f /etc/systemd/system/network.service.d/*.conf")
 
